@@ -15,5 +15,16 @@ namespace :import do
         puts "Invalid record"
       end
     end
+
+    categories = Violation.pluck(:violation_category).uniq
+
+    categories.each do |category|
+      category = Category.create(name: category, count: Violation.where(violation_category: category).count)
+      if category.save
+        puts "Created Category"
+      else
+        puts "Invalid record"
+      end
+    end
   end
 end
