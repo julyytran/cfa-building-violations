@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  root to: "violations#index"
+  root to: "categories#index"
 
   namespace :api, defaults: {format: :json} do
     namespace :v1 do
-      resources :violations, only: [:index]
+      resources :categories, only: [:index]
     end
   end
 end
