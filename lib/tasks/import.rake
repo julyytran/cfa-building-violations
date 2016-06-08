@@ -19,7 +19,15 @@ namespace :import do
     categories = Violation.pluck(:violation_category).uniq
 
     categories.each do |category|
-      category = Category.create(name: category, count: Violation.where(violation_category: category).count)
+      category_violations = Violation.where(violation_category: category)
+
+      category = Category.create(
+        name: category,
+        count: category_violations.count,
+        earliest_violation_date: category_violations.order(:violation_date).first.violation_date,
+        latest_violation_date: category_violations.order(:violation_date).last.violation_date
+      )
+
       if category.save
         puts "Created Category"
       else
