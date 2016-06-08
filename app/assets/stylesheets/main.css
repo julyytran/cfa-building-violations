@@ -1,0 +1,11 @@
+canvas {
+  width: 70% !important;
+  max-width: 768px;
+  height: auto !important;
+  display: block;
+  margin: auto;
+ }
+
+h1 {
+  text-align: center;
+}
