@@ -4,7 +4,6 @@ function createChart(ctx, categories) {
     data: {
       labels: categoryNames(categories),
       datasets: [{
-        label: 'Number of Violations',
         data: categoryCounts(categories),
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
@@ -33,8 +32,15 @@ function createChart(ctx, categories) {
       }]
     },
     options: {
+      legend: {
+        display: false,
+      },
       scales: {
         yAxes: [{
+          scaleLabel: {
+            display: true,
+            labelString: 'Number of Violations'
+          },
           ticks: {
             beginAtZero:true
           }
