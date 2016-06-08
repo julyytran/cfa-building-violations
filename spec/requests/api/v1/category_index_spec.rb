@@ -13,8 +13,8 @@ RSpec.describe "GET categories index" do
     category = json_body[0]
 
     expect(category).to eq ({
-      "name" => "Trash",
-      "count" => 2
+      "name" => "Bugs",
+      "count" => 4
       })
   end
 end
