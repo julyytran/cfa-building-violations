@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 20160607231520) do
   create_table "categories", force: :cascade do |t|
     t.integer  "count"
     t.citext   "name"
-    t.string   "earliest_violation_date"
-    t.string   "latest_violation_date"
+    t.datetime "earliest_violation_date"
+    t.datetime "latest_violation_date"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end

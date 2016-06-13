@@ -15,8 +15,8 @@ RSpec.describe "GET categories index" do
     expect(category).to eq ({
       "name" => "Bugs",
       "count" => 4,
-      "earliest_violation_date" => "2012-01-05",
-      "latest_violation_date" => "2012-12-14"
+      "earliest_violation_month" => "1",
+      "latest_violation_month" => "12"
       })
   end
 end
